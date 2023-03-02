@@ -1,0 +1,20 @@
+{
+  "alunos": [
+    {
+      "name": "Patrícia Marcela Sara Novaes",
+      "matricula": "003",
+      "curso": "Sistemas para internet",
+      "id": 3
+    }
+  ],
+  "disciplinas": [
+    {
+      "id": 1,
+      "name": "Introdução a progração com scripts",
+      "courseWorkload": "36h",
+      "professor": "Tiago Daniel Fernando Baptista",
+      "status": "Obrigatória",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    }
+  ]
+}
