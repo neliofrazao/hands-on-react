@@ -1,9 +1,10 @@
-import { useState, useEffect, useCallback} from 'react'
+import { useState, useEffect} from 'react'
 import SectionWrapper from '../../shared/section-wrapper'
 import InfoCardList from '../../shared/infor-card-list'
 import InfoCard from '../../shared/info-card'
 import http  from '../../utils/http'
 import './StudentList.css'
+import { Link } from 'react-router-dom'
 
 
 const StudentList = () => {
@@ -66,6 +67,7 @@ const StudentList = () => {
             <li>Matrícula: {item.registration}</li>
             <li>Curso: {item.course}</li>
           </ul>
+          <Link to={`aluno/${item.id}`}>Detalhamento do aluno</Link>
         </InfoCard>
         )) : <p>Nenhum Aluno Cadastrado</p>
       } 

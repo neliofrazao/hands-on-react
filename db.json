@@ -1,20 +1,8 @@
 {
   "alunos": [
     {
-      "name": "Sara Novaes",
-      "registration": "002",
-      "course": "Sistemas para internet",
-      "id": 1
-    },
-    {
-      "name": "Patrícia Marcela",
-      "registration": "003",
-      "course": "Sistemas para internet",
-      "id": 2
-    },
-    {
       "name": "Joâo Maria",
-      "registration": "004",
+      "registration": "003",
       "course": "Sistemas para internet",
       "id": 3
     }

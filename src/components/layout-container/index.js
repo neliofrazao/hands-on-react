@@ -8,8 +8,8 @@ const LayoutContainer = () => (
       <img src={Logo} alt="Sistema de Controle Acadêmico" className="header__logo" />
       <nav className="nav-header">
         <Link className="nav-header__link" to='/'>Principal </Link>
-        <Link className="nav-header__link" to='/informativo'>Informativos </Link>
-        <Link className="nav-header__link" to='/administrativo'>Administrativo </Link>
+        <Link className="nav-header__link" to='informativo'>Informativos </Link>
+        <Link className="nav-header__link" to='administrativo'>Administrativo </Link>
         <Link className="nav-header__link" to='/'>Sair </Link>
       </nav>
     </header>
