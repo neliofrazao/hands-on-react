@@ -1,8 +1,20 @@
 {
   "alunos": [
     {
-      "name": "Patrícia Marcela Sara Novaes",
+      "name": "Sara Novaes",
+      "matricula": "002",
+      "curso": "Sistemas para internet",
+      "id": 1
+    },
+    {
+      "name": "Patrícia Marcela",
       "matricula": "003",
+      "curso": "Sistemas para internet",
+      "id": 2
+    },
+    {
+      "name": "Joâo Maria",
+      "matricula": "004",
       "curso": "Sistemas para internet",
       "id": 3
     }

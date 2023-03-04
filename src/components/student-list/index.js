@@ -35,14 +35,15 @@ const StudentList = () => {
   return (
     <SectionWrapper title="alunos" button={studentButton}>    
       <InfoCardList>
-      {infoCardData.map((item) => (
-      <InfoCard title={item.name} key={item.id}>
-        <ul className="info-card__list">
-          <li>Matrícula: {item.registration}</li>
-          <li>Curso: {item.course}</li>
-        </ul>
-      </InfoCard>
-      ))} 
+      {infoCardData?.length ? infoCardData.map((item) => (
+        <InfoCard title={item.name} key={item.id}>
+          <ul className="info-card__list">
+            <li>Matrícula: {item.registration}</li>
+            <li>Curso: {item.course}</li>
+          </ul>
+        </InfoCard>
+        )) : <p>Nenhum Aluno Cadastrado</p>
+      } 
     </InfoCardList>
   </SectionWrapper>
 
