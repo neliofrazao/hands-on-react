@@ -1,19 +1,20 @@
 import './LayoutContainer.css'
 import Logo from '../../images/cse-marcas-unipe_50anos_va1.svg'
+import {Outlet, Link} from 'react-router-dom'
 
-const LayoutContainer = ({children}) => (
+const LayoutContainer = () => (
   <>
     <header className="header">
       <img src={Logo} alt="Sistema de Controle Acadêmico" className="header__logo" />
       <nav className="nav-header">
-        <a title="Página principal" className="nav-header__link">Principal</a>
-        <a  title="Alunos" className="nav-header__link">Alunos</a>
-        <a  title="Disciplina" className="nav-header__link">Disciplina</a>
-        <a  title="Sair" className="button button--danger">Sair</a>
+        <Link className="nav-header__link" to='/'>Principal </Link>
+        <Link className="nav-header__link" to='/informativo'>Informativos </Link>
+        <Link className="nav-header__link" to='/administrativo'>Administrativo </Link>
+        <Link className="nav-header__link" to='/'>Sair </Link>
       </nav>
     </header>
     <main>
-      {children}
+       <Outlet />
     </main>
     <footer className="footer">
       <span>Lorem, ipsum dolor sit tenetur voluptatem quod!</span>

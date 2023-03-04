@@ -34,6 +34,7 @@ const StudentList = () => {
         const response = await http.get('/alunos')
         setStudentData(response.data)
       } catch(erro) {
+        console.log(erro)
         if(erro.response.status === 404) {
           setHasError(true)
           console.log('Use a url correta')
