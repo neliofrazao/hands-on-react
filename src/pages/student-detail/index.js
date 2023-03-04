@@ -31,7 +31,7 @@ const StudentDetail = () => {
     },
     {
       label: 'Nova Aluno',
-      action: () => console.log('novo aluno')
+      action: () => navigate("/aluno/novo-aluno")
     },
   ]
   

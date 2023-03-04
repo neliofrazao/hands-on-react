@@ -5,6 +5,39 @@
       "registration": "003",
       "course": "Sistemas para internet",
       "id": 3
+    },
+    {
+      "inputs": {
+        "name": "Pessoa da Silva",
+        "registration": "005",
+        "course": "Sistemas para internet"
+      },
+      "id": 4
+    },
+    {
+      "inputs": {
+        "name": "Pessoa 2",
+        "registration": "1222",
+        "course": "Redes"
+      },
+      "id": 5
+    },
+    {
+      "inputs": {
+        "0": {
+          "name": ""
+        },
+        "1": {
+          "registration": ""
+        },
+        "2": {
+          "course": ""
+        },
+        "name": "aSAs",
+        "registration": "sasas",
+        "course": "Sistemas para internet"
+      },
+      "id": 6
     }
   ],
   "disciplinas": [
