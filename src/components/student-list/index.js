@@ -1,32 +1,55 @@
+import { useState, useEffect, useCallback} from 'react'
 import SectionWrapper from '../../shared/section-wrapper'
 import InfoCardList from '../../shared/infor-card-list'
 import InfoCard from '../../shared/info-card'
+import http  from '../../utils/http'
 import './StudentList.css'
-
-const infoCardData = [ 
-  {
-    id: 1,
-    name: "Evelyn Gonçalves",
-    registration: "001",
-    course: "Sistemas para internet"
-  },
-  {
-    id: 2,
-    name: "Laura Eliane",
-    registration: "002",
-    course: "Sistemas para internet"
-  },
-  {
-    id: 3,
-    name: "Carlos Alberto de Nobrega",
-    registration: "004",
-    course: "Sistemas para internet"
-  }
-]
 
 
 const StudentList = () => {
+  const [studentData, setStudentData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  // const getStudent = useCallback(
+  //   async () => {
+  //     try {
+  //       const response = await http.get('/alunos')
+  //       setStudentData(response.data)
+  //     } catch(erro) {
+  //       if(erro.response.status === 404) {
+  //         console.log('Use a url correta')
+  //       }
+  //     }
+  //   },
+  //   [studentData],
+  // )
   
+
+  useEffect(() => {
+    const getStudent = async () => {
+      try {
+        setIsLoading(true)
+        setHasError(false)
+        const response = await http.get('/alunos')
+        setStudentData(response.data)
+      } catch(erro) {
+        if(erro.response.status === 404) {
+          setHasError(true)
+          console.log('Use a url correta')
+        }
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    getStudent()
+  }, [])
+  
+
+  if(isLoading) {
+    return 'carregando'
+  }
+
   const studentButton = {
     label: 'Novo Aluno',
     action: () => console.log('Novo Aluno')
@@ -35,7 +58,8 @@ const StudentList = () => {
   return (
     <SectionWrapper title="alunos" button={studentButton}>    
       <InfoCardList>
-      {infoCardData?.length ? infoCardData.map((item) => (
+      {hasError && <div>Tente Novamente mais tarde</div>}
+      {studentData?.length ? studentData.map((item) => (
         <InfoCard title={item.name} key={item.id}>
           <ul className="info-card__list">
             <li>Matrícula: {item.registration}</li>
@@ -44,6 +68,7 @@ const StudentList = () => {
         </InfoCard>
         )) : <p>Nenhum Aluno Cadastrado</p>
       } 
+      
     </InfoCardList>
   </SectionWrapper>
 
