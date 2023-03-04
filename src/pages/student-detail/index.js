@@ -33,6 +33,10 @@ const StudentDetail = () => {
       label: 'Nova Aluno',
       action: () => navigate("/aluno/novo-aluno")
     },
+    {
+      label: 'Editar Aluno',
+      action: () => navigate(`/aluno/editar/${id}`)
+    },
   ]
   
   return (

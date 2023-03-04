@@ -5,6 +5,7 @@ import Admin from './pages/admin';
 import { Routes, Route } from "react-router-dom";
 import StudentDetail from './pages/student-detail';
 import NewStudent from './pages/new-student';
+import EditStudent from './pages/edit-student';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="administrativo" element={<Admin />} />
         <Route path="aluno">
           <Route path=":id" element={<StudentDetail />} />
+          <Route path="editar/:id" element={<EditStudent />} />
           <Route path="novo-aluno" element={<NewStudent />} />
         </Route>
       </Route>

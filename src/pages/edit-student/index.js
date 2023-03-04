@@ -1,28 +1,53 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import InfoCard from '../../shared/info-card'
 import SectionWrapper from '../../shared/section-wrapper'
-import './NewStudent.css'
 import http from '../../utils/http'
 import InputText from '../../shared/forms/input-text'
 import useForm from '../../hooks/useForm'
+import { useParams } from 'react-router-dom'
 
-const initalValues = {
-  name: '', 
-  course: '', 
-  registration: ''
-}
 
-const NewStudent = () => {
-  const [ inputs, setInputs, handleInputChange] = useForm(initalValues)
+const EditStudent = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [ inputs, setInputs, handleInputChange] = useForm({})  
+  const {id} = useParams()
+
+  console.log('id', id)
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    http.post('alunos', inputs)
-    setInputs({})
+    http.patch(`/alunos/${id}`, inputs)
   }
 
+  useEffect(() => {
+    const getStudent = async () => {
+      setIsLoading(true)
+      try{
+        const { data } = await http.get(`/alunos/${id}`)
+        const initalValues = {
+          name: data.name, 
+          course: data.course, 
+          registration: data.registration
+        }
+        setInputs(initalValues)
+      //  setStudentData(initalValues)
+      } catch(e) {
+        console.log(e)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    getStudent()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id])
+  
+  if( isLoading) {
+    return  'carregando'
+  }
+
+
   return (
-    <SectionWrapper  title="Novo estudante"  >
+    <SectionWrapper  title="Editar estudante"  >
       <InfoCard title="Cadastro de aluno" isFullWith>
         <form onSubmit={handleSubmit}>
           <div>
@@ -47,4 +72,4 @@ const NewStudent = () => {
   )
 }
 
-export default NewStudent
+export default EditStudent
