@@ -1,8 +1,11 @@
+import LayoutContainer  from './components/layout-container'
+import Main  from './pages/main'
+
 function App() {
   return (
-    <div className="App">
-      <p>Sistema Academico</p>
-    </div>
+    <LayoutContainer>
+      <Main />
+    </LayoutContainer>
   );
 }
 
