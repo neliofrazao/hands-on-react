@@ -1,0 +1,11 @@
+.info-card__list {
+	padding-bottom: 10px;
+}
+
+.info-card__list li {
+	line-height: 2;
+}
+
+.info-card p {
+	color: var(--cinza);
+}
