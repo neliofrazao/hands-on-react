@@ -171,7 +171,7 @@ https://rickandmortyapi.com/
 <p>O adicional irá garantir 2 (dois) pontos na avaliação.</p>
 
 ### Prazos
-<p>O prazo final para entrega do projeto será  para o dia 16/03, o projeto deverá estar disponivel no GIT(https://github.com/) e o link do repositório deverá ser encaminhado para o email neliofrazac@gmail.com.
+<p>O prazo final para entrega do projeto será  para o dia 20/03, o projeto deverá estar disponivel no GIT(https://github.com/) e o link do repositório deverá ser encaminhado para o email neliofrazac@gmail.com.
 Por favor, no assunto informar o seu nome acompanhado o texto “projeto disciplina arquitetura front end”.</p>
 <p>No corpo do email deverá conter o nome completo, matrícula e o link do repositório do projeto</p>
 

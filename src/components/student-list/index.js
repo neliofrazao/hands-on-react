@@ -5,6 +5,7 @@ import InfoCard from '../../shared/info-card'
 import http  from '../../utils/http'
 import './StudentList.css'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap';
 
 
 const StudentList = () => {
@@ -58,7 +59,8 @@ const StudentList = () => {
   }
 
   return (
-    <SectionWrapper title="alunos" button={studentButton}>    
+    <SectionWrapper title="alunos" button={studentButton}>
+      <Button variant="primary">Primary</Button>
       <InfoCardList>
       {hasError && <div>Tente Novamente mais tarde</div>}
       {studentData?.length ? studentData.map((item) => (

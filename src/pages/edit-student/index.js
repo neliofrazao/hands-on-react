@@ -5,10 +5,12 @@ import http from '../../utils/http'
 import InputText from '../../shared/forms/input-text'
 import useForm from '../../hooks/useForm'
 import { useParams } from 'react-router-dom'
+import {Alert} from 'react-bootstrap';
 
 
 const EditStudent = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const [isSuccessful, setIsSuccessful] = useState(false)
   const [ inputs, setInputs, handleInputChange] = useForm({})  
   const {id} = useParams()
 
@@ -17,6 +19,7 @@ const EditStudent = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     http.patch(`/alunos/${id}`, inputs)
+    setIsSuccessful(true)
   }
 
   useEffect(() => {
@@ -30,9 +33,11 @@ const EditStudent = () => {
           registration: data.registration
         }
         setInputs(initalValues)
+        
       //  setStudentData(initalValues)
       } catch(e) {
         console.log(e)
+        
       } finally {
         setIsLoading(false)
       }
@@ -47,7 +52,13 @@ const EditStudent = () => {
 
 
   return (
-    <SectionWrapper  title="Editar estudante"  >
+    <SectionWrapper  title="Editar estudante">
+      {isSuccessful && (
+        <Alert variant="success">
+        O aluno foi alterado com sucesso
+    </Alert>
+      )}
+       
       <InfoCard title="Cadastro de aluno" isFullWith>
         <form onSubmit={handleSubmit}>
           <div>
